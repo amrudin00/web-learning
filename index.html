@@ -3,236 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mubarek Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Amrudin Muhdin Portfolio</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden;
-      font-family: "Poppins", Arial, sans-serif;
-      background: linear-gradient(to bottom, #fdfdfd, #8f5a70);
-      color: #222;
-      display: flex;
-      flex-direction: column;
-    }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #292e49 0%, #536976 50%, #ff6a6a 100%);
+    color: #fafafa;
+    display: flex;
+    flex-direction: column;
+  }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      border-bottom: 2px solid #000;
-      background: rgba(255, 255, 255, 0.85);
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2.5rem;
+    border-bottom: 3px solid #222;
+    background: rgba(52, 73, 94, 0.85);
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+  }
 
-    header img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
+  header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(255,106,106,0.2);
+    border: 2px solid #ff6a6a;
+  }
 
-      object-fit: cover;
-    }
+  .personal-info {
+    font-size: 2rem;
+    color: #ffecb3;
+    font-weight: 900;
+    margin: 0 1rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px #ff6a6a;
+  }
 
-    .personal-info {
-      font-size: 1.6rem;
-      color: #222;
-      font-weight: bold;
-      margin: 0 1rem;
-    }
+  .container {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 110px);
+    background: rgba(255,255,255,0.05);
+  }
 
+  nav.side {
+    flex: 0 0 200px;
+    background: linear-gradient(120deg, #ff6a6a11, #292e4911);
+    border-right: 3px solid #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 2px 0 10px rgba(255,106,106,0.08);
+  }
+
+  nav ul {
+    list-style: none;
+    width: 100%;
+  }
+
+  nav li {
+    border-bottom: 2px dashed #444;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+    border-radius: 7px;
+  }
+
+  nav a {
+    text-decoration: none;
+    display: block;
+    color: #ffecb3;
+    padding: 1rem;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 7px;
+  }
+
+  nav a:hover {
+    background: linear-gradient(90deg, #ff6a6a 50%, #292e49 100%);
+    color: #212121;
+    box-shadow: 0 1px 12px #ff6a6a80;
+    transform: scale(1.06);
+  }
+
+  main {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadein 1.2s cubic-bezier(0.29,1.01,1,1);
+    background: none;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .main-section {
+    max-width: 680px;
+    text-align: center;
+    background: rgba(255,255,255,0.19);
+    border-radius: 28px;
+    padding: 2.2rem;
+    box-shadow: 0 6px 40px rgba(255, 106, 106, 0.22);
+    backdrop-filter: blur(2px);
+  }
+
+  .main-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+    text-shadow: 0 2px #ff6a6a40;
+    font-family: 'Montserrat', cursive;
+  }
+
+  .main-section h1 {
+    font-size: 2.2rem;
+    color: #ff6a6a;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-shadow: 0 2px #ffd70099;
+  }
+
+  .main-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.7rem;
+    color: #fff9e3;
+    text-shadow: 0 1px #ff6a6a10;
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 1.7rem;
+    flex-wrap: wrap;
+  }
+
+  .social-container a {
+    background: linear-gradient(145deg, #ff6a6a22 50%, #292e49cc 100%);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 3px 12px rgba(255,106,106,0.35);
+    transition: 0.3s ease;
+  }
+
+  .social-container a:hover {
+    background: #ffd700;
+    color: #ff6a6a;
+    transform: scale(1.13);
+    box-shadow: 0 6px 24px rgba(255,106,106,0.45);
+  }
+
+  .cv-button {
+    background: linear-gradient(90deg, #ff6a6a 60%, #ffd700 100%);
+    border-radius: 8px;
+    color: #292e49;
+    width: 150px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+    box-shadow: 0 3px 13px rgba(255,106,106,0.32);
+    letter-spacing: 0.5px;
+  }
+
+  .cv-button:hover {
+    background: linear-gradient(90deg, #ffd700 40%, #ff6a6a 100%);
+    color: #fff;
+    transform: scale(1.09);
+    box-shadow: 0 7px 18px rgba(255,106,106,0.50);
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 1rem;
+    color: #fafafa;
+    background: rgba(52, 73, 94, 0.92);
+    border-top: 3px solid #222;
+    margin-top: auto;
+    box-shadow: 0 -2px 12px rgba(255, 106, 106, 0.12);
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  /* responsive updates */
+  @media (max-width: 900px) {
     .container {
-      display: flex;
-      flex: 1;
-      min-height: calc(100vh - 100px);
+      flex-direction: column;
     }
 
     nav.side {
-      flex: 0 0 180px;
-      background: rgba(0, 0, 0, 0.05);
-      border-right: 2px solid #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-    }
-
-    nav ul {
-      list-style: none;
-      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      border-right: none;
+      border-bottom: 3px solid #222;
     }
 
     nav li {
-      border-bottom: 2px solid #000;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      display: block;
-      color: black;
-      padding: 1rem;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      background: gray;
-      color: white;
+      border: none;
     }
 
     main {
-      flex: 1;
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadein 1.2s ease-in-out;
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    header img {
+      width: 55px;
+      height: 55px;
     }
 
-    @keyframes fadein {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .personal-info {
+      font-size: 1.4rem;
     }
 
     .main-section {
-      max-width: 700px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .main-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
+      padding: 1.2rem;
     }
 
     .main-section h1 {
-      font-size: 2rem;
-      color: coral;
-      margin-bottom: 1rem;
-    }
-
-    .main-section p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
+      font-size: 1.3rem;
     }
 
     .social-container a {
-      background: white;
-      padding: 0.8rem;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transition: 0.3s ease;
-    }
-
-    .social-container a:hover {
-      background: #00ffff;
-      transform: scale(1.1);
+      width: 38px;
+      height: 38px;
+      padding: 0.5rem;
     }
 
     .cv-button {
-      background: peru;
-      border-radius: 5px;
-      color: white;
-      width: 130px;
-      height: 40px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: 0.3s;
+      width: 110px;
+      height: 38px;
+      font-size: 0.92rem;
     }
+  }
+</style>
 
-    .cv-button:hover {
-      background: chocolate;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    footer {
-      text-align: center;
-      padding: 0.7rem;
-      font-size: 0.9rem;
-      color: #444;
-      background: rgba(255, 255, 255, 0.8);
-      border-top: 2px solid #000;
-      margin-top: auto;
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-
-      nav.side {
-        flex-direction: row;
-        justify-content: space-around;
-        border-right: none;
-        border-bottom: 2px solid #000;
-      }
-
-      nav li {
-        border: none;
-      }
-
-      main {
-        padding: 1rem;
-      }
-    }@media (max-width: 600px) {
-      header img {
-        width: 70px;
-        height: 70px;
-      }
-
-      .personal-info {
-        font-size: 1.2rem;
-      }
-
-      .main-section {
-        padding: 1.5rem;
-      }
-
-      .main-section h1 {
-        font-size: 1.6rem;
-      }
-
-      .social-container a {
-        width: 45px;
-        height: 45px;
-        padding: 0.6rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
   <header>
-    <img src="image/d881ea17-ade8-465e-84b6-0d5e28bf1ee8.jpg" alt="amrudin muhdin" />
-    <h2 class="personal-info">Amrudin Muhidin</h2>
-    <h3 class="personal-info">009116</h3>
+    <img src="image/d881ea17-ade8-465e-84b6-0d5e28bf1ee8.jpg" alt="Amrudin Muhdin" />
+    <h2 class="personal-info">Amrudin Muhdin</h2>
+    <h3 class="personal-info">0091\16</h3>
   </header>
 
   <div class="container">
@@ -252,30 +293,14 @@
       <div class="main-section">
         <h3>Hey I'm <span style="color: coral;">Amrudin</span></h3>
         <h1>I'm a <span style="color: coral;">Web Developer</span></h1>
-        <p>
-          I’m a passionate web developer who loves creating modern, responsive, and
-          user-friendly websites. I specialize in building visually appealing and
-          interactive web experiences.
-        </p>
+        <p>I’m a web developer with a love for creativity and clean design. Every project is a new adventure blending visuals, interactivity, and user experience into something truly engaging.</p>
 
         <div class="social-container">
-   <a href="https://github.com/@mubarekcr7" target="_blank" ><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+   <a href="https://github.com/amrudin00" target="_blank" ><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 
-  <a href="https://facebook.com/Mubarekmohammed2026" target="_blank" title="Facebook">
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58
-      c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103
-      a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 
-      26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309
-      a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297
-      h3.919l-.386 2.103-.287 1.564h-3.246v8.245
-      C19.396 23.238 24 18.179 24 12.044
-      c0-6.627-5.373-12-12-12s-12 5.373-12 12
-      c0 5.628 3.874 10.35 9.101 11.647Z"/>
-    </svg>
-  </a>
+  
 
-  <a href="https://tiktok.com/@muba.royal2" target="_blank" title="TikTok">
+  <a href="https://tiktok.com/@amrudin_00" target="_blank" title="TikTok">
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M12.525.02c1.31-.02 2.61-.01 
       3.91-.02.08 1.53.63 3.09 1.75 4.17 
@@ -290,7 +315,8 @@
       .24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61
       .19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
     </svg>
-  </a><a href="https://x.com/@Mu72727Mubarek" target="_blank" title="X">
+  </a>
+  <a href="https://x.com/@Amrudin00" target="_blank" title="X">
     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824
       L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318
@@ -299,15 +325,12 @@
       7.754 11.09h-3.182z"/>
     </svg>
  
-        </div>
-
-        <button class="cv-button">Download CV</button>
-      </div>
+        
     </main>
   </div>
 
   <footer>
-    © 2026 Amrudin Muhidin | All Rights Reserved
+    © 2026 Amrudin Muhdin | All Rights Reserved
   </footer>
 
 </body>
